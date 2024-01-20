@@ -1,4 +1,4 @@
-<p align="center"><a target="_blank"><img src="public/imagenes/LogoOlympus.png" width="400"></a></p>
+<p align="center"><a target="_blank"><img src="src/main/resources/images/LogoOlympus.png" width="400"></a></p>
 
 
 # Proyecto Olympus - Sistema Integral de Reservaciones
