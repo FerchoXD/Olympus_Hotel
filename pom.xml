@@ -46,6 +46,16 @@
             <artifactId>spring-boot</artifactId>
             <version>3.2.2</version>
         </dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.23</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>1.0.2</version>
+		</dependency>
     </dependencies>
 
 	<build>
