@@ -5,12 +5,11 @@ import com.olympus.olympushotel.controllers.dtos.GetClienteResponse;
 import com.olympus.olympushotel.entities.Cliente;
 import com.olympus.olympushotel.repositories.IClienteRepository;
 import com.olympus.olympushotel.services.interfaces.IClienteService;
-import org.hibernate.annotations.NotFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ClienteService implements IClienteService {
+public class ClienteServiceImpl implements IClienteService {
     @Autowired
     private IClienteRepository repository;
 

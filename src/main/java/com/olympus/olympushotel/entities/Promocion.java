@@ -3,6 +3,8 @@ package com.olympus.olympushotel.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -14,6 +16,8 @@ public class Promocion {
     private Long id;
 
     private String descripcion;
+
+    private BigDecimal descuento;
 
     private LocalDate fecha_inicio;
 

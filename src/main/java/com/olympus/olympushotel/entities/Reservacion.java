@@ -21,11 +21,11 @@ public class Reservacion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDate fecha_inicio;
+    private LocalDate FechaInicio;
 
-    private LocalDate fecha_fin;
+    private LocalDate FechaFin;
 
-    private Long precio_total;
+    private Long NoHuespedes;
 
     @ManyToOne
     @JoinColumn(name = "cliente_id", nullable = false)

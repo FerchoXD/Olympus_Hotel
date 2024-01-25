@@ -15,7 +15,7 @@ public class Tarifa {
 
     private Date fecha;
 
-    private Long precio;
+    private Long tarifa_final;
 
     @ManyToOne
     @JoinColumn(name = "habitacion_id", nullable = false)
