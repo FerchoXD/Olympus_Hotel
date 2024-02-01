@@ -1,7 +1,6 @@
 package com.olympus.olympushotel.controllers;
 
-import com.olympus.olympushotel.controllers.dtos.GetClienteResponse;
-import com.olympus.olympushotel.services.interfaces.IClienteService;
+import com.olympus.olympushotel.controllers.dtos.response.GetClienteResponse;
 import com.olympus.olympushotel.services.interfaces.IHabitacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

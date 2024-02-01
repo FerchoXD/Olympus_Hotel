@@ -23,7 +23,7 @@ public class ClienteSeeder implements CommandLineRunner {
     @Override
     public void run(String... args) {
         // Crear datos de prueba aleatorios
-       /* for (int i = 0; i < 97; i++) {
+       /*for (int i = 0; i < 97; i++) {
             Cliente cliente = new Cliente();
             cliente.setNombre(faker.name().fullName());
             cliente.setApellidos(faker.name().fullName());
@@ -31,7 +31,7 @@ public class ClienteSeeder implements CommandLineRunner {
             cliente.setTelefono(faker.number().digits(10));
             cliente.setTimestampColumn(convertToLocalDateTime(faker.date().between(new Date(), new Date())));
             clienteRepository.save(cliente);
-        }*/
+       }*/
     }
 
     private LocalDateTime convertToLocalDateTime(Date date) {

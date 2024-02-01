@@ -1,16 +1,12 @@
-package com.olympus.olympushotel.controllers.dtos;
-
+package com.olympus.olympushotel.controllers.dtos.response;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
-
 @Getter @Setter
-public class GetClienteResponse {
+public class GetHabitacionResponse {
     private Long id;
     private String correo;
     private String telefono;
     private String nombre;
     private String apellidos;
-    private LocalDate timestampColumn;
 }
