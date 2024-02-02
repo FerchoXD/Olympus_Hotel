@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/clientes")
 public class ClienteController {
@@ -25,5 +27,21 @@ public class ClienteController {
     public GetClienteResponse create(@Valid @RequestBody CreateClienteRequest request) {
         GetClienteResponse clienteResponse = service.create(request);
         return clienteResponse;
+    }
+
+    @PutMapping("/update/{id}")
+    public GetClienteResponse update(@Valid @PathVariable Long id, @RequestBody CreateClienteRequest request) {
+        GetClienteResponse clienteResponse = service.update(id, request);
+        return clienteResponse;
+    }
+
+    @GetMapping("/all")
+    public List<GetClienteResponse> getAllClientes() {
+        return service.findAll();
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable Long id) {
+        service.delete(id);
     }
 }

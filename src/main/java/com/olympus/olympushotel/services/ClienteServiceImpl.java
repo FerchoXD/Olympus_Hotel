@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ClienteServiceImpl implements IClienteService {
@@ -34,6 +37,37 @@ public class ClienteServiceImpl implements IClienteService {
         Cliente savedCliente = repository.save(cliente);
         logger.debug("Cliente creado con exito");
         return from(savedCliente);
+    }
+
+    @Override
+    public GetClienteResponse update(Long id, CreateClienteRequest request) {
+        Cliente clienteExistente = repository.findById(id)
+                .orElseThrow(() -> new ClienteNotFoundException(id));
+
+        clienteExistente.setNombre(request.getNombre());
+        clienteExistente.setApellidos(request.getApellidos());
+        clienteExistente.setCorreo(request.getCorreo());
+        clienteExistente.setTelefono(request.getTelefono());
+        Cliente updatedCliente = repository.save(clienteExistente);
+        GetClienteResponse response = from(updatedCliente);
+        return response;
+    }
+
+    @Transactional
+    @Override
+    public void delete(Long id) {
+        Cliente cliente = repository.findById(id)
+                .orElseThrow(() -> new ClienteNotFoundException(id)); // Excepción personalizada para cuando no se encuentra el cliente
+        repository.delete(cliente);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<GetClienteResponse> findAll() {
+        List<Cliente> clientes = repository.findAll();
+        return clientes.stream()
+                .map(this::from)
+                .collect(Collectors.toList());
     }
 
     private GetClienteResponse from(Cliente cliente) {
